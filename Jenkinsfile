@@ -1,11 +1,13 @@
 pipeline {
   agent any
+  
   stages {
     stage('build') {
-      agent any
       steps {
-        tool 'node'
-        sh 'npm --version'
+        nodejs('node'){
+           npm install
+           npm run prod
+        }
       }
     }
 
