@@ -5,8 +5,7 @@ pipeline {
     stage('build') {
       steps {
         nodejs('node'){
-           npm install
-           npm run prod
+           sh 'npm -v'
         }
       }
     }
